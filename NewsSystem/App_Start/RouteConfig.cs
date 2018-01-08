@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
+using System.Web.Routing;
 
 namespace NewsSystem
 {
@@ -10,9 +7,18 @@ namespace NewsSystem
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            var settings = new FriendlyUrlSettings();
-            settings.AutoRedirectMode = RedirectMode.Permanent;
-            routes.EnableFriendlyUrls(settings);
+            routes.EnableFriendlyUrls();
+
+            routes.MapPageRoute("News", "", "~/Views/News.aspx");
+
+            routes.MapPageRoute("Articles", "articles", "~/Views/Articles.aspx");
+            routes.MapPageRoute("ArticleDetails", "articles/details", "~/Views/ArticleDetails.aspx");
+
+            routes.MapPageRoute("Categories", "categories", "~/Views/Categories.aspx");
+
+
+            routes.MapPageRoute("Login", "login", "~/Views/Account/Login.aspx");
+            routes.MapPageRoute("Register", "register", "~/Views/Account/Register.aspx");
         }
     }
 }
