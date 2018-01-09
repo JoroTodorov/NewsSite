@@ -13,7 +13,7 @@ namespace NewsSystem.Views
     public partial class News : System.Web.UI.Page
     {
         [Inject]
-        private IArticlesService Service { get; set; }
+        public IArticlesService Service { get; set; }
 
         public IEnumerable<Article> GetTopArticles()
         {

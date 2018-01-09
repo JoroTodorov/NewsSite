@@ -13,5 +13,7 @@ namespace NewsSystem.Data
         IDbSet<Article> Articles { get; }
 
         IDbSet<Category> Categories { get; }
+
+        int SaveChanges();
     }
 }

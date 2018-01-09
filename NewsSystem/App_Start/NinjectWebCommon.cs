@@ -66,6 +66,7 @@ namespace NewsSystem.App_Start
         {
             kernel.Bind<IDbContext>().To<NewsSystemContext>();
             kernel.Bind<IArticlesService>().To<ArticlesService>();
+            kernel.Bind<ICategoriesService>().To<CategoriesService>();
         }
     }
 }
